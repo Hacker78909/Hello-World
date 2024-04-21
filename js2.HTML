@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-2 Futuristic</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://png.pngtree.com/thumb_back/fw800/back_our/20190623/ourmid/pngtree-simple-technology-quality-light-effect-hd-background-image_237701.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .box {
+            height: 300px;
+            width: 370px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.5s;
+        }
+
+        .box:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 24px;
+            border: none;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        p {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="box pulse-animation">
+        <p style="color:red">Hello World-Red</p>
+        <p style="color:blue">Hello World-Blue</p>
+        <p style="color:gray">Hello World-Gray</p>
+        <p style="color:orange">Hello World-Orange</p>
+    </div>
+
+    <div>
+        <button onclick="Rchange()">RED</button>
+        <button onclick="Bchange()">BLUE</button>
+        <button onclick="Gchange()">GRAY</button>
+        <button onclick="Ochange()">ORANGE</button>
+    </div>
+
+    <script>
+        function Rchange() {
+            changeColor("red");
+        }
+        
+        function Bchange() {
+            changeColor("blue");
+        }
+        
+        function Gchange() {
+            changeColor("gray");
+        }
+        
+        function Ochange() {
+            changeColor("orange");
+        }
+
+        function changeColor(color) {
+            const box = document.querySelector('.box');
+            box.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
